@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NestTech Innovations - NestPod Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        /* Slide 1 - Intro */
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-1::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .slide-1::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .company-name {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 50px;
+            font-weight: 300;
+            z-index: 1;
+        }
+
+        .product-name {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .product-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.95);
+            max-width: 700px;
+            text-align: center;
+            line-height: 1.6;
+            z-index: 1;
+        }
+
+        .transformation-icons {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            z-index: 1;
+        }
+
+        .transform-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .transform-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .transform-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .transform-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: rgba(255,255,255,0.5);
+            align-self: center;
+        }
+
+        /* Slide 2 - Data */
+        .slide-2 {
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .slide-2 h2 {
+            font-size: 2.5rem;
+            color: #e94560;
+            margin-bottom: 50px;
+            text-align: center;
+            text-shadow: 0 0 30px rgba(233, 69, 96, 0.5);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+        }
+
+        .data-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+        }
+
+        .data-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .data-title {
+            color: #e94560;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .data-description {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .data-why {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+        }
+
+        /* Slide 3 - Business Model */
+        .slide-3 {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            position: relative;
+        }
+
+        .slide-3::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .slide-3 h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .business-container {
+            display: flex;
+            gap: 50px;
+            z-index: 1;
+        }
+
+        .business-column {
+            background: rgba(255,255,255,0.95);
+            border-radius: 30px;
+            padding: 40px;
+            width: 350px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .channel-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .channel-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .price-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .price-item:hover {
+            transform: scale(1.02);
+        }
+
+        .price-label {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #11998e;
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .closing-statement {
+            position: absolute;
+            bottom: 60px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .closing-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Navigation */
+        .nav-dots {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .nav-dot.active {
+            background: white;
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        .nav-arrows {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.4);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.1);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 1.2rem;
+            z-index: 100;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Introduction -->
+        <div class="slide slide-1 active">
+            <div class="logo-container">
+                <div class="logo-icon">🪺</div>
+                <div class="company-name">NestTech Innovations</div>
+            </div>
+            <div class="tagline">One Seat. Every Journey.</div>
+            <div class="product-name">NestPod Pro</div>
+            <div class="product-subtitle">
+                The world's first fully modular smart baby seating system —
+                one intelligent seat that transforms to meet every moment of your parenting journey.
+            </div>
+            <div class="transformation-icons">
+                <div class="transform-item">
+                    <div class="transform-icon">🚗</div>
+                    <div class="transform-label">Car Seat</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="transform-item">
+                    <div class="transform-icon">🍽️</div>
+                    <div class="transform-label">High Chair</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="transform-item">
+                    <div class="transform-icon">🛒</div>
+                    <div class="transform-label">Stroller</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="transform-item">
+                    <div class="transform-icon">🌙</div>
+                    <div class="transform-label">Rocker</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Data Collection -->
+        <div class="slide slide-2">
+            <h2>🔬 Smart Data That Protects Your Baby</h2>
+            <div class="data-grid">
+                <div class="data-card">
+                    <div class="data-icon">💨</div>
+                    <div class="data-title">Breathing Patterns</div>
+                    <div class="data-description">Piezoelectric sensors detect micro-movements of baby's chest</div>
+                    <div class="data-why">⚠️ Alert if breathing pauses for more than 20 seconds</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-icon">🌡️</div>
+                    <div class="data-title">Temperature Monitoring</div>
+                    <div class="data-description">Thermistor array tracks ambient and body-contact temperature</div>
+                    <div class="data-why">🔥 Prevent overheating — a leading cause of infant discomfort</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-icon">📐</div>
+                    <div class="data-title">Position & Movement</div>
+                    <div class="data-description">Accelerometer + gyroscope track orientation in real-time</div>
+                    <div class="data-why">🔄 Detect unsafe rollover positions, track sleep patterns</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-icon">🔧</div>
+                    <div class="data-title">Installation Verification</div>
+                    <div class="data-description">Tilt sensor confirms correct car seat angle</div>
+                    <div class="data-why">✅ 70% of car seats are installed incorrectly — we fix that</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-icon">😢</div>
+                    <div class="data-title">AI Cry Analysis</div>
+                    <div class="data-description">CryDecode™ AI analyzes cry patterns in real-time</div>
+                    <div class="data-why">🎯 Tell parents: hungry, tired, uncomfortable, or needs attention</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-icon">🔔</div>
+                    <div class="data-title">Harness Safety</div>
+                    <div class="data-description">Load cells monitor harness tension continuously</div>
+                    <div class="data-why">🛡️ Ensure proper restraint for maximum safety</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Business Model -->
+        <div class="slide slide-3">
+            <h2>💰 Revenue Model</h2>
+            <div class="business-container">
+                <div class="business-column">
+                    <div class="channel-header">
+                        <div class="channel-icon">👨‍👩‍👧</div>
+                        <div class="channel-title">B2C Consumer</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">NestPod Pro Core</div>
+                        <div class="price-value">$699</div>
+                        <div class="price-note">The intelligent seat module</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Accessory Bases</div>
+                        <div class="price-value">$149-249</div>
+                        <div class="price-note">Car, Stroller, High Chair, Rocker</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">NestCare+ Subscription</div>
+                        <div class="price-value">$9.99/mo</div>
+                        <div class="price-note">Extended warranty + premium features</div>
+                    </div>
+                </div>
+                <div class="business-column">
+                    <div class="channel-header">
+                        <div class="channel-icon">🏢</div>
+                        <div class="channel-title">B2B Enterprise</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Daycare Fleet Package</div>
+                        <div class="price-value">Volume Pricing</div>
+                        <div class="price-note">Bulk discounts + staff training</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">NestCare Business</div>
+                        <div class="price-value">$199/mo</div>
+                        <div class="price-note">Dashboard for multiple units</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Year 3 Target</div>
+                        <div class="price-value">$5.75M</div>
+                        <div class="price-note">87% hardware + 13% recurring</div>
+                    </div>
+                </div>
+            </div>
+            <div class="closing-statement">
+                <div class="closing-text">🪺 One Seat. Every Journey. Vote NestTech!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-dots">
+        <div class="nav-dot active" onclick="goToSlide(0)"></div>
+        <div class="nav-dot" onclick="goToSlide(1)"></div>
+        <div class="nav-dot" onclick="goToSlide(2)"></div>
+    </div>
+    <div class="nav-arrows">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+    <div class="slide-counter">
+        <span id="current">1</span> / 3
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const counter = document.getElementById('current');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            counter.textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            }
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => touchStartX = e.touches[0].clientX);
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? nextSlide() : prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>
