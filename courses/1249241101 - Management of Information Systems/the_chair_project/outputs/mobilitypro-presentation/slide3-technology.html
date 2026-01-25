@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.header-bar {
+  background: #87A96B;
+  padding: 10pt 40pt;
+}
+.header-text {
+  color: #FFFFFF;
+  font-size: 18pt;
+  font-weight: bold;
+  margin: 0;
+}
+.main-content {
+  display: flex;
+  flex: 1;
+  padding: 12pt 30pt;
+  gap: 15pt;
+}
+.tech-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6pt;
+}
+.column-header {
+  background: #2C2C2C;
+  padding: 5pt 8pt;
+  border-radius: 4pt;
+}
+.column-title {
+  color: #FFFFFF;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.tech-item {
+  background: #F8F8F8;
+  padding: 6pt 8pt;
+  border-radius: 4pt;
+  border-left: 3pt solid #87A96B;
+}
+.tech-name {
+  font-size: 9pt;
+  font-weight: bold;
+  color: #2C2C2C;
+  margin: 0 0 2pt 0;
+}
+.tech-detail {
+  font-size: 8pt;
+  color: #5A5A5A;
+  margin: 0;
+}
+.safety-item {
+  border-left-color: #E07A5F;
+}
+.connect-item {
+  border-left-color: #D4A574;
+}
+.data-section {
+  background: #F4F1DE;
+  padding: 10pt 30pt;
+}
+.data-header {
+  font-size: 11pt;
+  font-weight: bold;
+  color: #2C2C2C;
+  margin: 0 0 8pt 0;
+  text-align: center;
+}
+.data-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 10pt;
+}
+.data-card {
+  flex: 1;
+  background: #FFFFFF;
+  padding: 6pt;
+  border-radius: 4pt;
+  text-align: center;
+  box-shadow: 1pt 1pt 3pt rgba(0, 0, 0, 0.1);
+}
+.data-type {
+  font-size: 9pt;
+  font-weight: bold;
+  color: #87A96B;
+  margin: 0 0 2pt 0;
+}
+.data-purpose {
+  font-size: 7pt;
+  color: #5A5A5A;
+  margin: 0;
+}
+.bottom-bar {
+  background: #2C2C2C;
+  padding: 6pt 30pt;
+  display: flex;
+  justify-content: space-around;
+}
+.compliance-item {
+  text-align: center;
+}
+.compliance-text {
+  color: #87A96B;
+  font-size: 8pt;
+  font-weight: bold;
+  margin: 0;
+}
+.compliance-sub {
+  color: #AAAAAA;
+  font-size: 7pt;
+  margin: 1pt 0 0 0;
+}
+</style>
+</head>
+<body>
+<div class="header-bar">
+  <h1 class="header-text">Technology Stack and Data Collection</h1>
+</div>
+<div class="main-content">
+  <div class="tech-column">
+    <div class="column-header">
+      <p class="column-title">NAVIGATION</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">LiDAR + Computer Vision</p>
+      <p class="tech-detail">Autonomous point-to-point travel</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">UWB Indoor Positioning</p>
+      <p class="tech-detail">Sub-10cm accuracy indoors</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">ML Route Learning</p>
+      <p class="tech-detail">Optimizes paths over time</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">Smart Building APIs</p>
+      <p class="tech-detail">Auto-calls elevators, opens doors</p>
+    </div>
+  </div>
+  <div class="tech-column">
+    <div class="column-header">
+      <p class="column-title">HEALTH MONITORING</p>
+    </div>
+    <div class="tech-item safety-item">
+      <p class="tech-name">PPG Heart Rate Sensor</p>
+      <p class="tech-detail">Armrest-integrated monitoring</p>
+    </div>
+    <div class="tech-item safety-item">
+      <p class="tech-name">Respiratory Detection</p>
+      <p class="tech-detail">Piezoelectric breathing sensor</p>
+    </div>
+    <div class="tech-item safety-item">
+      <p class="tech-name">Fall Detection</p>
+      <p class="tech-detail">9-axis IMU with instant alerts</p>
+    </div>
+    <div class="tech-item safety-item">
+      <p class="tech-name">Edge AI Processing</p>
+      <p class="tech-detail">On-device anomaly detection</p>
+    </div>
+  </div>
+  <div class="tech-column">
+    <div class="column-header">
+      <p class="column-title">CONNECTIVITY</p>
+    </div>
+    <div class="tech-item connect-item">
+      <p class="tech-name">Family Care Dashboard</p>
+      <p class="tech-detail">Web portal for caregivers</p>
+    </div>
+    <div class="tech-item connect-item">
+      <p class="tech-name">Telehealth Integration</p>
+      <p class="tech-detail">In-chair video consultations</p>
+    </div>
+    <div class="tech-item connect-item">
+      <p class="tech-name">Geofencing SafeZone</p>
+      <p class="tech-detail">GPS + UWB boundary alerts</p>
+    </div>
+    <div class="tech-item connect-item">
+      <p class="tech-name">SOS Emergency Button</p>
+      <p class="tech-detail">Direct 911 connection</p>
+    </div>
+  </div>
+</div>
+<div class="data-section">
+  <h2 class="data-header">Data We Collect and Why</h2>
+  <div class="data-grid">
+    <div class="data-card">
+      <p class="data-type">Heart Rate</p>
+      <p class="data-purpose">Early cardiac warning</p>
+    </div>
+    <div class="data-card">
+      <p class="data-type">Respiratory</p>
+      <p class="data-purpose">Breathing problems</p>
+    </div>
+    <div class="data-card">
+      <p class="data-type">Location</p>
+      <p class="data-purpose">Safety and navigation</p>
+    </div>
+    <div class="data-card">
+      <p class="data-type">Activity</p>
+      <p class="data-purpose">Mobility wellness</p>
+    </div>
+    <div class="data-card">
+      <p class="data-type">Falls</p>
+      <p class="data-purpose">Emergency response</p>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <div class="compliance-item">
+    <p class="compliance-text">HIPAA Compliant</p>
+    <p class="compliance-sub">Healthcare security</p>
+  </div>
+  <div class="compliance-item">
+    <p class="compliance-text">FDA Class II</p>
+    <p class="compliance-sub">510(k) pathway</p>
+  </div>
+  <div class="compliance-item">
+    <p class="compliance-text">User Consent</p>
+    <p class="compliance-sub">Opt-in data</p>
+  </div>
+  <div class="compliance-item">
+    <p class="compliance-text">On-Device AI</p>
+    <p class="compliance-sub">Works offline</p>
+  </div>
+</div>
+</body>
+</html>

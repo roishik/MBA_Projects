@@ -25,12 +25,12 @@
             "id": "8e4465a54d828535",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "pdf",
               "state": {
-                "currentVersion": "1.11.4"
+                "file": "EIS_Strategy_Background.pdf"
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.4"
+              "icon": "lucide-file-text",
+              "title": "EIS_Strategy_Background"
             }
           }
         ],
@@ -198,13 +198,13 @@
   },
   "active": "8e4465a54d828535",
   "lastOpenFiles": [
+    "EIS_Champion_Strategy_Final.md",
     "EIS_Champion_Strategy_Final.pdf",
     "EIS_Champion_Strategy_Final_v2.pdf",
     "EIS_Strategy_Background.md",
     "create_pdf_v2.py",
     "EIS_Strategy_Background.pdf",
     "create_background_pdf.py",
-    "EIS_Champion_Strategy_Final.md",
     "create_pdf.py",
     "EIS_Strategy_Draft_Plans.md",
     "EIS_Strategy_Resources.md"

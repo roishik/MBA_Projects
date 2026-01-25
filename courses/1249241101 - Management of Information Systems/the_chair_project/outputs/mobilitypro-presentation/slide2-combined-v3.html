@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.header-bar {
+  background: #2C2C2C;
+  padding: 12pt 30pt;
+}
+.header-text {
+  color: #F4F1DE;
+  font-size: 18pt;
+  font-weight: bold;
+  margin: 0;
+}
+.main-content {
+  display: flex;
+  flex: 1;
+  padding: 12pt 22pt 10pt 22pt;
+  gap: 18pt;
+}
+.problem-column {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 8pt;
+}
+.problem-header {
+  background: #E07A5F;
+  padding: 6pt 12pt;
+  border-radius: 5pt;
+}
+.problem-title {
+  color: #FFFFFF;
+  font-size: 12pt;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.stat-row {
+  display: flex;
+  gap: 8pt;
+}
+.stat-box {
+  flex: 1;
+  background: #FDF6F0;
+  padding: 8pt 10pt;
+  border-radius: 5pt;
+  border-left: 4pt solid #E07A5F;
+  text-align: center;
+}
+.stat-number {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #E07A5F;
+  margin: 0;
+}
+.stat-label {
+  font-size: 8pt;
+  color: #5A5A5A;
+  margin: 3pt 0 0 0;
+  line-height: 1.3;
+}
+.tagline-box {
+  background: #2C2C2C;
+  padding: 8pt 10pt;
+  border-radius: 5pt;
+  text-align: center;
+}
+.tagline-text {
+  color: #E07A5F;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.4;
+}
+.challenge-box {
+  background: #FDF6F0;
+  padding: 8pt 10pt;
+  border-radius: 5pt;
+}
+.challenge-item {
+  font-size: 9pt;
+  color: #3A3A3A;
+  margin: 0 0 4pt 0;
+  line-height: 1.3;
+}
+.solution-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7pt;
+}
+.solution-header {
+  background: #87A96B;
+  padding: 6pt 12pt;
+  border-radius: 5pt;
+}
+.solution-title {
+  color: #FFFFFF;
+  font-size: 12pt;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.solution-feature {
+  background: #F0F5ED;
+  padding: 6pt 10pt;
+  border-radius: 5pt;
+  border-left: 4pt solid #87A96B;
+}
+.feature-title {
+  font-size: 10pt;
+  font-weight: bold;
+  color: #87A96B;
+  margin: 0 0 2pt 0;
+}
+.feature-desc {
+  font-size: 8pt;
+  color: #5A5A5A;
+  margin: 0;
+}
+.tech-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7pt;
+}
+.tech-header {
+  background: #D4A574;
+  padding: 6pt 12pt;
+  border-radius: 5pt;
+}
+.tech-title {
+  color: #FFFFFF;
+  font-size: 12pt;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.tech-item {
+  background: #FDF8F3;
+  padding: 6pt 10pt;
+  border-radius: 5pt;
+  border-left: 4pt solid #D4A574;
+}
+.tech-name {
+  font-size: 10pt;
+  font-weight: bold;
+  color: #D4A574;
+  margin: 0 0 2pt 0;
+}
+.tech-detail {
+  font-size: 8pt;
+  color: #5A5A5A;
+  margin: 0;
+}
+.bottom-bar {
+  background: #F4F1DE;
+  padding: 8pt 22pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data-section {
+  display: flex;
+  gap: 16pt;
+}
+.data-item {
+  text-align: center;
+}
+.data-type {
+  font-size: 10pt;
+  font-weight: bold;
+  color: #87A96B;
+  margin: 0;
+}
+.data-purpose {
+  font-size: 8pt;
+  color: #5A5A5A;
+  margin: 2pt 0 0 0;
+}
+.compliance-section {
+  display: flex;
+  gap: 18pt;
+}
+.compliance-text {
+  font-size: 9pt;
+  font-weight: bold;
+  color: #2C2C2C;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="header-bar">
+  <h1 class="header-text">The Problem, Our Solution, and Technology</h1>
+</div>
+<div class="main-content">
+  <div class="problem-column">
+    <div class="problem-header">
+      <p class="problem-title">THE AGING CRISIS</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat-box">
+        <p class="stat-number">2x</p>
+        <p class="stat-label">People 65+ will double by 2050 in Western countries</p>
+      </div>
+      <div class="stat-box">
+        <p class="stat-number">4:1 to 2:1</p>
+        <p class="stat-label">Workers per retiree ratio dropping in EU/US</p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-box">
+        <p class="stat-number">65M</p>
+        <p class="stat-label">People worldwide need wheelchairs today</p>
+      </div>
+      <div class="stat-box">
+        <p class="stat-number">-40%</p>
+        <p class="stat-label">Family size decline since 1970 in the West</p>
+      </div>
+    </div>
+    <div class="tagline-box">
+      <p class="tagline-text">More seniors. Fewer caregivers. Smaller families. The care gap is widening every year.</p>
+    </div>
+    <div class="challenge-box">
+      <p class="challenge-item">Traditional wheelchairs create total dependency</p>
+      <p class="challenge-item">Health issues go undetected until emergencies</p>
+      <p class="challenge-item">150,000 caregiver shortage in US by 2030</p>
+    </div>
+  </div>
+  <div class="solution-column">
+    <div class="solution-header">
+      <p class="solution-title">OUR SOLUTION</p>
+    </div>
+    <div class="solution-feature">
+      <p class="feature-title">AutoGlide + VitalRide</p>
+      <p class="feature-desc">Smart wheelchairs for consumers and facilities</p>
+    </div>
+    <div class="solution-feature">
+      <p class="feature-title">Autonomous Navigation</p>
+      <p class="feature-desc">LiDAR + AI for point-to-point travel</p>
+    </div>
+    <div class="solution-feature">
+      <p class="feature-title">Health Monitoring</p>
+      <p class="feature-desc">Heart rate, respiratory, fall detection 24/7</p>
+    </div>
+    <div class="solution-feature">
+      <p class="feature-title">Instant Safety Alerts</p>
+      <p class="feature-desc">Geofencing, emergency SOS, caregiver alerts</p>
+    </div>
+    <div class="solution-feature">
+      <p class="feature-title">Family Dashboard</p>
+      <p class="feature-desc">Real-time monitoring and telehealth</p>
+    </div>
+  </div>
+  <div class="tech-column">
+    <div class="tech-header">
+      <p class="tech-title">TECHNOLOGY</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">LiDAR + Computer Vision</p>
+      <p class="tech-detail">Autonomous point-to-point navigation</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">UWB Indoor Positioning</p>
+      <p class="tech-detail">Sub-10cm accuracy indoors</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">PPG + Piezoelectric Sensors</p>
+      <p class="tech-detail">Heart rate and respiratory monitoring</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">Edge AI Processing</p>
+      <p class="tech-detail">On-device anomaly detection</p>
+    </div>
+    <div class="tech-item">
+      <p class="tech-name">Smart Building APIs</p>
+      <p class="tech-detail">Elevators, doors, telehealth integration</p>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <div class="data-section">
+    <div class="data-item">
+      <p class="data-type">Heart Rate</p>
+      <p class="data-purpose">Cardiac warnings</p>
+    </div>
+    <div class="data-item">
+      <p class="data-type">Respiratory</p>
+      <p class="data-purpose">Breathing issues</p>
+    </div>
+    <div class="data-item">
+      <p class="data-type">Location</p>
+      <p class="data-purpose">Safety/navigation</p>
+    </div>
+    <div class="data-item">
+      <p class="data-type">Falls</p>
+      <p class="data-purpose">Emergency alerts</p>
+    </div>
+    <div class="data-item">
+      <p class="data-type">Activity</p>
+      <p class="data-purpose">Wellness tracking</p>
+    </div>
+  </div>
+  <div class="compliance-section">
+    <p class="compliance-text">HIPAA Compliant</p>
+    <p class="compliance-text">FDA Class II</p>
+    <p class="compliance-text">On-Device AI</p>
+  </div>
+</div>
+</body>
+</html>
